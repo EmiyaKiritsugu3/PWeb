@@ -1,0 +1,293 @@
+/* 🎨 Variáveis de cor para fácil manutenção */
+:root {
+    --cor-primaria: #2c3e50;
+    --cor-secundaria: #3498db;
+    --cor-fundo: #f4f4f4;
+    --cor-texto: #333;
+    --cor-branca: #fff;
+    --cor-sombra: rgba(0,0,0,0.1);
+    --transition-speed: 0.3s;
+}
+
+/* 🌙 Estilos para o modo escuro (aplicado via classe .dark-mode) */
+.dark-mode {
+    --cor-primaria: #1a252f;
+    --cor-secundaria: #4aa3ff;
+    --cor-fundo: #121212;
+    --cor-texto: #e0e0e0;
+    --cor-branca: #1e1e1e;
+    --cor-sombra: rgba(255,255,255,0.1);
+}
+
+/* 🌙 Modo escuro automático (preferência do sistema) */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light-mode) { /* Aplica apenas se não for forçado o modo claro */
+        --cor-primaria: #1a252f;
+        --cor-secundaria: #4aa3ff;
+        --cor-fundo: #121212;
+        --cor-texto: #e0e0e0;
+        --cor-branca: #1e1e1e;
+        --cor-sombra: rgba(255,255,255,0.1);
+    }
+}
+
+/* Reset básico e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding-top: 80px;
+    padding-bottom: 60px;
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Cabeçalho e Rodapé */
+header, footer {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    z-index: 1000;
+}
+
+header {
+    top: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    bottom: 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+/* Estilos para Imagem e Poema (semântica aprimorada) */
+figure {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    max-width: 250px;
+    height: auto;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 10px;
+}
+
+blockquote {
+    text-align: center;
+    font-size: 1.1em;
+    font-style: italic;
+    border-left: 4px solid var(--cor-secundaria);
+    padding-left: 15px;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+blockquote footer {
+    position: static;
+    background: none;
+    box-shadow: none;
+    color: var(--cor-texto);
+    text-align: right;
+    font-style: normal;
+    font-size: 1em;
+    padding: 10px 0 0 0;
+}
+
+/* Títulos e Parágrafos */
+h1 {
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+p {
+    text-align: center;
+}
+
+/* Tabelas */
+.tabelas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--cor-branca);
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    transition: background-color var(--transition-speed);
+}
+
+caption {
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px;
+    color: var(--cor-primaria);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+thead th {
+    background-color: var(--cor-secundaria);
+    color: #fff; /* cor do texto do cabeçalho não muda com o tema */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.dark-mode tbody tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+.dark-mode th, .dark-mode td {
+    border-color: #444;
+}
+
+/* Links */
+a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed);
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+    outline: 2px solid var(--cor-secundaria);
+    outline-offset: 2px;
+}
+
+/* Botão de Tema */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--cor-branca);
+    color: var(--cor-branca);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-speed), transform 0.2s;
+}
+
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding-top: 70px;
+    }
+    header {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+    .header-container {
+        padding: 0 10px;
+    }
+    .tabelas {
+        flex-direction: column;
+        align-items: center;
+    }
+    table {
+        width: 90%;
+    }
+}
+
+/* Estilos para a nova seção de lista */
+#caracteristicas {
+    text-align: center;
+}
+
+#caracteristicas h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+}
+
+#caracteristicas ul {
+    list-style-type: none; /* Remove os marcadores padrão */
+    padding: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#caracteristicas li {
+    background-color: var(--cor-branca);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--cor-sombra);
+    border-left: 5px solid var(--cor-secundaria);
+    transition: transform 0.2s, background-color var(--transition-speed);
+}
+
+#caracteristicas li:hover {
+    transform: translateX(5px);
+}
+
+.dark-mode #caracteristicas li {
+    background-color: #2a2a2a;
+}
