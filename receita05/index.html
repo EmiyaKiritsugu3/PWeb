@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita 5: Portal PWeb News (JS)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="grid-container">
+    <header class="header">
+        <h1>Portal PWeb News</h1>
+        <button id="theme-toggle">Alternar Tema</button>
+    </header>
+
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Tecnologia</a>
+        <a href="#">Ciência</a>
+        <a href="#">Design</a>
+    </nav>
+
+    <main class="main-content">
+        <h2 id="main-title">CSS Grid Domina o Desenvolvimento Web</h2>
+        <p id="main-text">O CSS Grid Layout revolucionou a forma como criamos layouts complexos na web, oferecendo um controle bidimensional sem precedentes sobre o posicionamento de elementos.</p>
+    </main>
+
+    <aside class="sidebar">
+        <h3>Últimas Notícias</h3>
+        <ul>
+            <!-- Atributos data-* para guardar o conteúdo que será usado pelo JS -->
+            <li><a href="#" data-title="Flexbox ainda é essencial?" data-text="Sim! Flexbox e Grid são ferramentas complementares. Use Flexbox para componentes e Grid para o layout geral da página.">Flexbox ainda é essencial?</a></li>
+            <li><a href="#" data-title="O futuro das Variáveis CSS" data-text="As variáveis CSS, ou Custom Properties, estão se tornando a base para sistemas de design escaláveis e temas dinâmicos na web.">O futuro das Variáveis CSS</a></li>
+            <li><a href="#" data-title="HTML Semântico e SEO" data-text="Usar tags HTML semânticas como <article> e <nav> não só melhora a acessibilidade, mas também impulsiona o ranking do seu site nos motores de busca.">HTML Semântico e SEO</a></li>
+        </ul>
+    </aside>
+
+    <footer class="footer">
+        <p>PWeb News - Todos os direitos reservados &copy; 2025</p>
+    </footer>
+
+    <!-- O script foi linkado no final para garantir que o HTML seja carregado primeiro -->
+    <script src="script.js" defer></script>
+</body>
+</html>
