@@ -1,0 +1,225 @@
+/* --- Variáveis de Cor (Tema Padrão: Claro) --- */
+:root {
+    --cor-fundo: #f0f2f5;
+    --cor-card: #ffffff;
+    --cor-texto-primario: #1a252f;
+    --cor-texto-secundario: #4a5568;
+    --cor-header-footer: #3b5998;
+    --cor-navbar: #4a69ad;
+    --cor-link: #ffffff;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+    --cor-botao-submit: #34a853;
+}
+
+/* --- Variáveis do Tema Escuro --- */
+.dark {
+    --cor-fundo: #1a252f;
+    --cor-card: #2c3e50;
+    --cor-texto-primario: #e0e7ff;
+    --cor-texto-secundario: #a0aec0;
+    --cor-header-footer: #213159;
+    --cor-navbar: #324479;
+    --cor-link: #e0e7ff;
+    --cor-sombra: rgba(0, 0, 0, 0.4);
+    --cor-botao-submit: #66bb6a;
+}
+
+/* --- Estilos Globais --- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* --- Layout do Grid --- */
+.grid-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "header   header"
+        "navbar   navbar"
+        "sidebar  main"
+        "footer   footer";
+    gap: 10px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-secundario);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- Áreas do Grid --- */
+.header, .navbar, .main-content, .sidebar, .footer {
+    padding: 20px;
+    background-color: var(--cor-card);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--cor-sombra);
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* --- Cabeçalho e Rodapé --- */
+.header, .footer {
+    background-color: var(--cor-header-footer);
+    color: var(--cor-link);
+}
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer {
+    grid-area: footer;
+    text-align: center;
+}
+
+/* --- Botão de Tema --- */
+.theme-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--cor-link);
+    color: var(--cor-link);
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+.theme-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* --- Navbar --- */
+.navbar {
+    grid-area: navbar;
+    background-color: var(--cor-navbar);
+}
+.navbar a {
+    color: var(--cor-link);
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+/* --- Conteúdo Principal --- */
+.main-content {
+    grid-area: main;
+}
+.main-content h2 {
+    color: var(--cor-texto-primario);
+    margin-top: 0;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    grid-area: sidebar;
+}
+.sidebar h3 {
+    color: var(--cor-texto-primario);
+    margin-top: 0;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar li {
+    margin-bottom: 10px;
+}
+.sidebar button {
+    background: none;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+    border-radius: 5px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.sidebar button:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-primario);
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "navbar"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}
+
+
+/* ================================================= */
+/* --- NOVOS ESTILOS (Receita 9): Formulário --- */
+/* ================================================= */
+
+.form-container {
+    margin-bottom: 2rem;
+}
+
+.form-container h3 {
+    color: var(--cor-texto-primario);
+    margin-top: 0;
+    border-bottom: 2px solid var(--cor-navbar);
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--cor-texto-primario);
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+    
+    /* Cores de tema */
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-primario);
+    border-color: var(--cor-navbar);
+}
+
+.dark .form-group input[type="text"],
+.dark .form-group textarea {
+    border-color: var(--cor-texto-secundario);
+}
+
+.submit-button {
+    background-color: var(--cor-botao-submit);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.submit-button:hover {
+    opacity: 0.85;
+}
+
+.form-divider {
+    border: none;
+    border-top: 1px dashed var(--cor-texto-secundario);
+    margin: 2rem 0;
+}
