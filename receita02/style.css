@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* :root para definir cores globais do nosso tema */
 :root {
     --cor-fundo: #fdf2e9;
@@ -95,4 +96,103 @@ li {
 .recipe-tip p {
     margin: 0; /* Remove a margem padrão do parágrafo */
     font-size: 0.9rem;
+=======
+/* :root para definir cores globais do nosso tema */
+:root {
+    --cor-fundo: #fdf2e9;
+    --cor-card: #ffffff;
+    --cor-primaria: #854442;
+    --cor-secundaria: #be9b7b;
+    --cor-texto: #4f4f4f;
+    --sombra-card: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo base da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    margin: 0;
+    
+    /* Usamos display flex para centralizar o card facilmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem; /* Espaço para não colar nas bordas em telas pequenas */
+    box-sizing: border-box;
+}
+
+/* O card principal da receita */
+.recipe-card {
+    max-width: 600px;
+    background-color: var(--cor-card);
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: var(--sombra-card);
+    overflow: hidden; /* Garante que a imagem respeite os cantos arredondados */
+}
+
+.recipe-image {
+    width: 100%;
+    height: 250px;
+    display: block; /* Remove pequeno espaço extra abaixo da imagem */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+/* ===== BOX MODEL: PADDING ===== */
+/* Esta classe aplica o espaçamento interno principal do nosso card */
+.recipe-content {
+    padding: 2rem;
+}
+
+/* Estilização da tipografia */
+h1, h2 {
+    font-family: 'Lora', serif;
+    color: var(--cor-primaria);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 0.5rem; /* Espaço entre o texto e a borda */
+    margin-top: 2rem; /* Espaço acima dos títulos de seção */
+    margin-bottom: 1rem;
+}
+
+.description {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 2rem; /* Espaço para separar do resto */
+}
+
+/* Estilizando as listas de ingredientes e preparo */
+ul, ol {
+    padding-left: 20px; /* Alinhamento da lista */
+}
+
+li {
+    margin-bottom: 0.75rem; /* Espaçamento entre os itens da lista */
+    line-height: 1.5;
+}
+
+/* ===== BOX MODEL: MARGIN, PADDING, BORDER ===== */
+/* A caixa de dica é um exemplo perfeito e isolado do Box Model */
+.recipe-tip {
+    background-color: #fff9e6; /* Cor de fundo diferente */
+    border-left: 5px solid var(--cor-secundaria); /* Borda à esquerda */
+    margin-top: 2.5rem; /* Margem para separar da seção anterior */
+    padding: 1.5rem; /* Espaçamento interno para o texto respirar */
+    border-radius: 5px;
+}
+
+.recipe-tip p {
+    margin: 0; /* Remove a margem padrão do parágrafo */
+    font-size: 0.9rem;
+>>>>>>> e5eb0bebbbef3e07b1aa152fe1ae503c4ffd08f3
 }

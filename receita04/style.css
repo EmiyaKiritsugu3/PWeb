@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -70,4 +71,78 @@ body {
             "sidebar"
             "footer";
     }
+=======
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* ===== CONTAINER GRID ===== */
+.grid-container {
+    display: grid;
+    min-height: 100vh;
+    
+    /* Definindo as colunas: 1fr (fração) ocupa o espaço disponível */
+    grid-template-columns: 1fr 300px; /* Conteúdo principal flexível, sidebar fixa */
+    
+    /* Definindo as linhas: auto se ajusta ao conteúdo */
+    grid-template-rows: auto auto 1fr auto;
+
+    /* Definindo as áreas do layout de forma visual */
+    grid-template-areas: 
+        "header   header"
+        "navbar   navbar"
+        "main     sidebar"
+        "footer   footer";
+    
+    gap: 10px;
+}
+
+/* Atribuindo cada elemento a uma área do grid */
+.header       { grid-area: header; }
+.navbar       { grid-area: navbar; }
+.main-content { grid-area: main; }
+.sidebar      { grid-area: sidebar; }
+.footer       { grid-area: footer; }
+
+/* Estilização geral dos blocos do grid */
+.header, .navbar, .main-content, .sidebar, .footer {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header, .footer {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.navbar {
+    background-color: #4a69ad;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+/* ===== GRID RESPONSIVO ===== */
+/* Em telas menores que 768px, o layout muda */
+@media (max-width: 768px) {
+    .grid-container {
+        /* Mudando para uma única coluna */
+        grid-template-columns: 1fr;
+        
+        /* Redefinindo as áreas para empilhar verticalmente */
+        grid-template-areas: 
+            "header"
+            "navbar"
+            "main"
+            "sidebar"
+            "footer";
+    }
+>>>>>>> e5eb0bebbbef3e07b1aa152fe1ae503c4ffd08f3
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* :root define as variáveis de cor para o tema claro (padrão) */
 :root {
     --cor-fundo: #f0f2f5;
@@ -105,3 +106,112 @@ body {
             "footer";
     }
 }
+=======
+/* :root define as variáveis de cor para o tema claro (padrão) */
+:root {
+    --cor-fundo: #f0f2f5;
+    --cor-superficie: #ffffff;
+    --cor-texto-primario: #333;
+    --cor-header: #3b5998;
+    --cor-header-texto: #ffffff;
+    --cor-navbar: #4a69ad;
+    --cor-sombra: rgba(0,0,0,0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Quando o body tiver a classe .dark-mode, essas variáveis serão usadas */
+body.dark-mode {
+    --cor-fundo: #121212;
+    --cor-superficie: #1e1e1e;
+    --cor-texto-primario: #e0e0e0;
+    --cor-header: #1e1e1e;
+    --cor-header-texto: #e0e0e0;
+    --cor-navbar: #2c2c2c;
+    --cor-sombra: rgba(255,255,255,0.1);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-primario);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* ===== CONTAINER GRID ===== */
+.grid-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        "header   header"
+        "navbar   navbar"
+        "main     sidebar"
+        "footer   footer";
+    gap: 10px;
+}
+
+/* Atribuindo cada elemento a uma área do grid */
+.header       { grid-area: header; }
+.navbar       { grid-area: navbar; }
+.main-content { grid-area: main; }
+.sidebar      { grid-area: sidebar; }
+.footer       { grid-area: footer; }
+
+/* Estilização geral dos blocos do grid */
+.header, .navbar, .main-content, .sidebar, .footer {
+    padding: 20px;
+    background-color: var(--cor-superficie);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px var(--cor-sombra);
+    transition: background-color var(--transition-speed);
+}
+
+.header {
+    background-color: var(--cor-header);
+    color: var(--cor-header-texto);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#theme-toggle {
+    padding: 8px 16px;
+    border: 1px solid var(--cor-header-texto);
+    background-color: transparent;
+    color: var(--cor-header-texto);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#theme-toggle:hover {
+    background-color: var(--cor-header-texto);
+    color: var(--cor-header);
+}
+
+.navbar { background-color: var(--cor-navbar); }
+.navbar a { color: #fff; text-decoration: none; margin-right: 15px; }
+
+.sidebar a {
+    text-decoration: none;
+    color: var(--cor-texto-primario);
+}
+.sidebar a:hover { text-decoration: underline; }
+.sidebar ul { padding-left: 20px; }
+.sidebar li { margin-bottom: 10px; }
+
+/* ===== GRID RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "navbar"
+            "main"
+            "sidebar"
+            "footer";
+    }
+}
+>>>>>>> e5eb0bebbbef3e07b1aa152fe1ae503c4ffd08f3
